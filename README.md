@@ -7,7 +7,7 @@ to implement the functionality.
 
 * Implement the function in user_class.php to select data form database based on passed in parameters.  I have
 included stub code with comments to suggest method.  
-  * Use joins to get the address info.  ()
+  * Use joins to get the address info.  (Use seperate tables for basic info and addresses).
 * Implement the function in user_class.php to add a user to the database.
 * Implement a function to modify user data in the database.
   * For these use PDO prepared statements to make database queries.
