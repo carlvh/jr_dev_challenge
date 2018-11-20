@@ -9,45 +9,50 @@
 // `` are column names
 // '' are values
 
-function fill_user_list_variables($args) {
-	extract($args);  // What does extract do?
+class user_class {
 
-  $where_sql = "WHERE 1";
-  $sort_sql = "";
-  $from_sql = "";
-  $search_sql = "";
-  $param_array = array();
+	function fill_user_list_variables($args) {
+		extract($args);  // What does extract do?
 
-  // assume that this sets up the database correctly.
-  $db = new PDO("config string");
-  // $group, $order, $dir, $q - these are the optional variable that may be passed in.
+	  $where_sql = "WHERE 1";
+	  $sort_sql = "";
+	  $from_sql = "";
+	  $search_sql = "";
+	  $param_array = array();
 
-  //select all rows and columns form a table called users.
+	  // assume that this sets up the database correctly.
+	  $db = new PDO("config string");
+	  // $group, $order, $dir, $q - these are the optional variable that may be passed in.
 
-  // select the `name` of all the users in 'guest' `group` if a group variable to be passed to func and set to guest. Assume a $group variable passed in.
-  // Place the selection into a variable $select_sql.  Use conditionals and add to the $where_sql variable.
+	  //select all rows and columns form a table called users.
 
-  // sort the results by `number_of_files` largest to smallest, make it possible to sort smallest to largest.  Assume a $order and $dir variable - put in $sort_sql
+	  // select the `name` of all the users in 'guest' `group` if a group variable to be passed to func and set to guest. Assume a $group variable passed in.
 
-  // Do a text search for a partial name - put in $search_sql
+	  // Place the selection into a variable $select_sql.  Use conditionals and add to the $where_sql variable.
 
-  // combine partial sql stmts into $sql_stmt_st
-  $sql_stmt_st =
+	  // sort the results by `number_of_files` largest to smallest, make it possible to sort smallest to largest.  Assume a $order and $dir variable - put in $sort_sql
 
-  // make the statment - this prepares and executes the statement.
-  $sql_stmt = $db->prepare($sql_stmt_st);
-  $sql_stmt->execute($param_array);
+	  // Do a text search for a partial name - put in $search_sql
 
-  $result = $sql_stmt->fetch(); // Use in a loop - this returns one result at a time until
+	  // combine partial sql stmts into $sql_stmt_st
+	  $sql_stmt_st =
 
-  // return an array of associtive arrays of all users.
-}
+	  // make the statment - this prepares and executes the statement.
+	  $sql_stmt = $db->prepare($sql_stmt_st);
+	  $sql_stmt->execute($param_array);
+
+	  $result = $sql_stmt->fetch(); // Use in a loop - this returns one result at a time until
+
+	  // return an array of associtive arrays of all users.
+	}
 
 
-function add_user($args){
-  extract($args);
-	// Insert a row into the user table.  Data -> username, Full Name, email, group id
-  return json_ecncode(array('error'=>0, 'msg'=>''));
+	function add_user($args){
+	  extract($args);
+		// Insert a row into the user table.  Data -> username, Full Name, email, group id
+	  return json_ecncode(array('error'=>0, 'msg'=>''));
+	}
+	
 }
 
  ?>

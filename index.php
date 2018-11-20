@@ -9,6 +9,7 @@
     </style>
 
     <!-- Make inputs for name, address, email -->
+    <!-- Make a form for adding a new user. -->
 
     <button id="submitButton">Submit</button>
 
@@ -17,6 +18,7 @@
         <!-- Make a table header - Include Name, Address, email -->
       </tr>
     	<!-- Make a php code block here that fetchs from db and adds a row for each db result, only select the first 100 results -->
+       <!-- or make an ajax call or make a call to the user_class method. -->
       <?php
 
       ?>
@@ -27,7 +29,8 @@
 
     ?>
     <script>
-      // How do you make a javascipt closure?  What are the benifits.
+      // How do you make a javascipt closure (or Immediately Invoked Function Expressions)?  What are the benifits.
+      // Use that to wrap your code.
 
       // Use JQuery to send the data to the database with an AJAX call.  Add the row to the table dynamically.
 
